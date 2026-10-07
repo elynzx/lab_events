@@ -1,7 +1,10 @@
-import { cambiarParrafo, enviarFormulario } from "./events.js";
+import {
+  configurarEventoParrafo,
+  cambiarParrafo,
+  enviarFormulario,
+} from "./events.js";
 
-const btnEstilo = document.getElementById("botonEstilo");
-btnEstilo.addEventListener("click", cambiarParrafo);
+configurarEventoParrafo(cambiarParrafo);
 
 enviarFormulario((nombre, apellido) => {
   console.log(`Nombre: ${nombre}`);

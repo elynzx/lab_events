@@ -1,9 +1,15 @@
+const btnEstilo = document.getElementById("botonEstilo");
+
 export function cambiarParrafo() {
   const parrafo = document.getElementById("parrafo");
 
   parrafo.style.fontFamily = "monospace";
   parrafo.style.fontSize = "3rem";
   parrafo.style.color = "blue";
+}
+
+export function configurarEventoParrafo(callback) {
+  btnEstilo.addEventListener("click", callback);
 }
 
 export function enviarFormulario(callback) {
