@@ -2,6 +2,7 @@ import {
   configurarEventoParrafo,
   enviarFormulario,
   mostrarAlerta,
+  manipularDom,
 } from "./events.js";
 
 configurarEventoParrafo();
@@ -9,3 +10,5 @@ configurarEventoParrafo();
 enviarFormulario();
 
 mostrarAlerta();
+
+manipularDom();

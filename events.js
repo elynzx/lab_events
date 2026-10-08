@@ -43,3 +43,21 @@ function mostrarInformacionEnlaces() {
 export function mostrarAlerta() {
   btnEnlaces.addEventListener("click", mostrarInformacionEnlaces);
 }
+
+export function manipularDom() {
+  const contenedor = document.getElementById("contenedor");
+  const segundo = document.querySelectorAll(".segundo");
+  const tercero = document.querySelector("ol .tercero");
+
+  contenedor.textContent = "¡Hola!";
+
+  const footer = document.querySelector(".footer");
+  footer.classList.add("principal");
+  footer.classList.remove("principal");
+
+  const elementoLi = document.createElement("li");
+  elementoLi.textContent = "cuatro";
+
+  const listaUl = document.querySelector("ul");
+  listaUl.append(elementoLi);
+}
