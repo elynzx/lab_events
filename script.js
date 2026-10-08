@@ -6,7 +6,4 @@ import {
 
 configurarEventoParrafo(cambiarParrafo);
 
-enviarFormulario((nombre, apellido) => {
-  console.log(`Nombre: ${nombre}`);
-  console.log(`Apellido: ${apellido}`);
-});
+enviarFormulario();

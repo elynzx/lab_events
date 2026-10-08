@@ -1,4 +1,5 @@
 const btnEstilo = document.getElementById("botonEstilo");
+const formulario = document.getElementById("form1");
 
 export function cambiarParrafo() {
   const parrafo = document.getElementById("parrafo");
@@ -12,15 +13,14 @@ export function configurarEventoParrafo(callback) {
   btnEstilo.addEventListener("click", callback);
 }
 
-export function enviarFormulario(callback) {
-  const formulario = document.getElementById("form1");
+function mostrarValores(event) {
+  event.preventDefault();
+  const nombre = formulario.elements["fname"].value.trim();
+  const apellido = formulario.elements["lname"].value.trim();
+  console.log("fname:", nombre);
+  console.log("lname:", apellido);
+}
 
-  formulario.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const nombre = formulario.elements["fname"].value.trim();
-    const apellido = formulario.elements["lname"].value.trim();
-
-    callback(nombre, apellido);
-  });
+export function enviarFormulario() {
+  formulario.addEventListener("submit", mostrarValores);
 }
