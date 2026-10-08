@@ -1,7 +1,8 @@
 const btnEstilo = document.getElementById("botonEstilo");
 const formulario = document.getElementById("form1");
+const btnEnlaces = document.getElementById("botonEnlaces");
 
-export function cambiarParrafo() {
+function cambiarParrafo() {
   const parrafo = document.getElementById("parrafo");
 
   parrafo.style.fontFamily = "monospace";
@@ -9,8 +10,8 @@ export function cambiarParrafo() {
   parrafo.style.color = "blue";
 }
 
-export function configurarEventoParrafo(callback) {
-  btnEstilo.addEventListener("click", callback);
+export function configurarEventoParrafo() {
+  btnEstilo.addEventListener("click", cambiarParrafo);
 }
 
 function mostrarValores(event) {
@@ -23,4 +24,22 @@ function mostrarValores(event) {
 
 export function enviarFormulario() {
   formulario.addEventListener("submit", mostrarValores);
+}
+
+function mostrarInformacionEnlaces() {
+  const enlaces = document.querySelectorAll("a");
+  if (enlaces.length === 0) return;
+
+  const total = enlaces.length;
+  const primero = enlaces[0].href;
+  const ultimo = enlaces[enlaces.length - 1].href;
+
+  alert(`Información:
+  - Total de enlaces: ${total}
+  - Primer enlace: ${primero}
+  - Último enlace: ${ultimo}`);
+}
+
+export function mostrarAlerta() {
+  btnEnlaces.addEventListener("click", mostrarInformacionEnlaces);
 }

@@ -1,9 +1,11 @@
 import {
   configurarEventoParrafo,
-  cambiarParrafo,
   enviarFormulario,
+  mostrarAlerta,
 } from "./events.js";
 
-configurarEventoParrafo(cambiarParrafo);
+configurarEventoParrafo();
 
 enviarFormulario();
+
+mostrarAlerta();
